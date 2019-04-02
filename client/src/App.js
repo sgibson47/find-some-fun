@@ -6,24 +6,18 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state ={
-      events: [],
-      isLoaded: false
+      events: []
     }
   }
 
-  render() {
-    let {events, isLoaded} = this.state
+  componentDidMount(){
+    fetch('')
+  }
 
-    if(!isLoaded){
-      return <div>Loading</div>
-    }else{
-      return (
-        <div className="App">
-          Hello World
-        </div>
-      );
-    }
-    
+  render() {
+    let {events} = this.state
+
+    return(<div>Hello</div>);
   }
 }
 
