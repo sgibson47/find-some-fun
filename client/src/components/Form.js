@@ -24,7 +24,18 @@ class Form extends Component {
     const auth_token = `HYZOE7FG2CUN6U3Y66B4`
     fetch(`https://www.eventbriteapi.com/v3/categories/?token=${auth_token}`)
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => this.addCategories(data))
+  }
+
+  addCategories(data){
+    const categories = data.categories
+    const categoriesSelect = document.querySelector('#categoriesList');
+    categories.forEach(category => {
+      const option = document.createElement('option');
+      option.value = category.id;
+      option.appendChild(document.createTextNode(category.name));
+      categoriesSelect.appendChild(option);
+    })
   }
 
   render(){
