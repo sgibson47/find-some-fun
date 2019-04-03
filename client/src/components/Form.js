@@ -10,6 +10,7 @@ class Form extends Component {
 
     this.handleKeywordChange = this.handleKeywordChange.bind(this);
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleKeywordChange(event){
@@ -18,6 +19,22 @@ class Form extends Component {
 
   handleCategoryChange(event){
     this.setState({category: event.target.value})
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+    const eventKeyword = document.getElementById('eventKeyword').value;
+    const category = document.getElementById('categoriesList').value;
+
+    if(eventKeyword !== '' && category !== ''){
+      //Find matching events from API
+    }else if(eventKeyword == '' && category !== ''){
+      // Display a message that you must provide a keyword
+    }else if(eventKeyword !== '' && category == ''){
+      // Display a message that you must select a keyword
+    }else{
+      // Display a message that you must provide a keyword & select a keyword
+    }
   }
 
   componentDidMount(){
@@ -45,6 +62,7 @@ class Form extends Component {
           <label> Keyword (Name, location . . . etc.)
             <input 
               type='text' 
+              id='eventKeyword'
               value={this.state.eventKeyword}
               onChange={this.handleKeywordChange}
             />
