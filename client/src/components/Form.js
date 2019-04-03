@@ -20,6 +20,13 @@ class Form extends Component {
     this.setState({category: event.target.value})
   }
 
+  componentDidMount(){
+    const auth_token = `HYZOE7FG2CUN6U3Y66B4`
+    fetch(`https://www.eventbriteapi.com/v3/categories/?token=${auth_token}`)
+      .then(response => response.json())
+      .then(data => console.log(data))
+  }
+
   render(){
     return(
       <div className='Form'>

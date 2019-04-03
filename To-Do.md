@@ -7,7 +7,7 @@ Goal: a React App that let's users look up upcoming events in thier area by cate
     - text input for keyword
     - selector inout for categories
     - submit button
-[] Query Eventbrite API for categories 
+[X] Query Eventbrite API for categories 
 [] Add categories to form's select drop down
 [] Handle user input to form 
     add alert if no keyword is provided
