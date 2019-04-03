@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import eventbrite from 'eventbrite';
+import Form from './components/Form'
 
 class App extends Component {
   constructor(props){
@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     let {events} = this.state
 
-    return(<div>Hello</div>);
+    return(<Form />);
   }
 }
 

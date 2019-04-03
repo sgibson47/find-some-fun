@@ -7,8 +7,9 @@ class Form extends Component {
       eventKeyword: '',
       category: ''
     };
-
   }
+
+  
 
   render(){
     return(
