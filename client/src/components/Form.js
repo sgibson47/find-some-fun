@@ -30,10 +30,13 @@ class Form extends Component {
       //Find matching events from API
     }else if(eventKeyword == '' && category !== ''){
       // Display a message that you must provide a keyword
+      this.addWarning('You must provide a keyword to search')
     }else if(eventKeyword !== '' && category == ''){
-      // Display a message that you must select a keyword
+      // Display a message that you must select a category
+      this.addWarning('You must select a category to search')
     }else{
       // Display a message that you must provide a keyword & select a keyword
+      this.addWarning('You must provide a keyword and select a category to search')
     }
   }
 
@@ -53,6 +56,31 @@ class Form extends Component {
       option.appendChild(document.createTextNode(category.name));
       categoriesSelect.appendChild(option);
     })
+  }
+
+  addWarning(message) {
+    // create a div
+    const div = document.createElement('div');
+    div.className = 'warning'
+
+    // add the text
+    div.innerText(message);
+
+    // Insert into the HTML
+    const form = document.getElementsByClassName('Form')
+    form.appendChild(div);
+
+    // Remove the alert after 5 seconds
+    setTimeout(() => {
+        this.removeWarning();
+    }, 5000);
+  }
+
+  removeWarning(){
+    const warning = document.getElementsByClassName('warning');
+    if(warning) {
+      warning.remove();
+    }
   }
 
   render(){
