@@ -101,7 +101,7 @@ class Form extends Component {
                 value={this.state.category}
                 onChange={this.handleCategoryChange}
             >
-
+              <option value="">Select a Category</option>
             </select>
           </label>
           <br/>
