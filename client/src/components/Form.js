@@ -84,6 +84,13 @@ class Form extends Component {
     }
   }
 
+  searchEB(eventKeyword, category){
+    const auth_token = `HYZOE7FG2CUN6U3Y66B4`
+    fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${eventKeyword}&categories=${category}&token=${auth_token}`)
+      .then(response => response.json())
+      .then(data => console.log(data))
+  }
+
   render(){
     return(
       <div className='Form'>
