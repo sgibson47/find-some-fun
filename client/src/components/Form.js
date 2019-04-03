@@ -7,9 +7,18 @@ class Form extends Component {
       eventKeyword: '',
       category: ''
     };
+
+    this.handleKeywordChange = this.handleKeywordChange.bind(this);
+    this.handleCategoryChange = this.handleCategoryChange.bind(this);
   }
 
-  
+  handleKeywordChange(event){
+    this.setState({eventKeyword: event.target.value})
+  }
+
+  handleCategoryChange(event){
+    this.setState({category: event.target.value})
+  }
 
   render(){
     return(
@@ -18,10 +27,16 @@ class Form extends Component {
           <label> Keyword (Name, location . . . etc.)
             <input 
               type='text' 
+              value={this.state.eventKeyword}
+              onChange={this.handleKeywordChange}
             />
           </label><br/>
           <label> Category
-            <select id='categoriesList'>
+            <select 
+                id='categoriesList'
+                value={this.state.category}
+                onChange={this.handleCategoryChange}
+            >
 
             </select>
           </label>
