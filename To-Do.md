@@ -3,7 +3,7 @@ Make Find Some Fun!
 Goal: a React App that let's users look up upcoming events in thier area by category & keyword 
 
 [X] Create Eventbrite app & get auth-token
-[] Create a form for users to provide keyword & select a category
+[X] Create a form for users to provide keyword & select a category
     - text input for keyword
     - selector inout for categories
     - submit button
