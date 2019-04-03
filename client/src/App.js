@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import './App.css';
+import eventbrite from 'eventbrite';
 
 class App extends Component {
   constructor(props){
