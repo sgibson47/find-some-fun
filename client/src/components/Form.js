@@ -86,7 +86,7 @@ class Form extends Component {
   render(){
     return(
       <div className='Form'>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label> Keyword (Name, location . . . etc.)
             <input 
               type='text' 
