@@ -28,6 +28,7 @@ class Form extends Component {
 
     if(eventKeyword !== '' && category !== ''){
       //Find matching events from API
+      this.searchEB(eventKeyword, category);
     }else if(eventKeyword == '' && category !== ''){
       // Display a message that you must provide a keyword
       this.addWarning('You must provide a keyword to search')
