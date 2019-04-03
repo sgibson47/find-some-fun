@@ -61,13 +61,13 @@ class Form extends Component {
   addWarning(message) {
     // create a div
     const div = document.createElement('div');
-    div.className = 'warning'
+    div.setAttribute("id", "warning")
 
     // add the text
-    div.innerText(message);
+    div.appendChild(document.createTextNode(message));
 
     // Insert into the HTML
-    const form = document.getElementsByClassName('Form')
+    const form = document.querySelector('#eventForm')
     form.appendChild(div);
 
     // Remove the alert after 5 seconds
@@ -77,7 +77,7 @@ class Form extends Component {
   }
 
   removeWarning(){
-    const warning = document.getElementsByClassName('warning');
+    const warning = document.querySelector('#warning');
     if(warning) {
       warning.remove();
     }
@@ -86,7 +86,7 @@ class Form extends Component {
   render(){
     return(
       <div className='Form'>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} id='eventForm'>
           <label> Keyword (Name, location . . . etc.)
             <input 
               type='text' 
