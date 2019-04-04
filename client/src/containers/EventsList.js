@@ -6,6 +6,7 @@ class EventsList extends Component {
     return (
       this.props.events.map(event =>
           <Event 
+            key={event.id}
             event={event}
           />
         )
@@ -14,7 +15,7 @@ class EventsList extends Component {
   render(){
     return(
       <div className="EventsList">
-          {this.createEvents()}
+        {this.createEvents()}
       </div>
     )
   }
