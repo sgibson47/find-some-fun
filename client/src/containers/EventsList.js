@@ -5,7 +5,9 @@ class EventsList extends Component {
   createEvents = () => {
     return (
       this.props.events.map(event =>
-          <div>{event.name.text}</div>
+          <Event 
+            event={event}
+          />
         )
     )
   }
