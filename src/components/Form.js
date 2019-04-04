@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col'
 
-class Form extends Component {
+
+class EventForm extends Component {
   constructor(props){
     super(props);
     this.state={
@@ -86,31 +91,47 @@ class Form extends Component {
 
   render(){
     return(
-      <div className='Form'>
-        <form onSubmit={this.handleSubmit} id='eventForm'>
-          <label> Keyword (Name, location . . . etc.)
-            <input 
+      <Form onSubmit={this.handleSubmit} id='eventForm'>
+        <Form.Group as={Row} controlId="formHorizontalKeyword">
+          <Form.Label column sm={2}>
+            Keyword
+          </Form.Label>
+          <Col sm={10}>
+            <Form.Control 
               type='text' 
               id='eventKeyword'
+              placeholder='Name, location . . . etc.'
               value={this.state.eventKeyword}
               onChange={this.handleKeywordChange}
             />
-          </label><br/>
-          <label> Category
-            <select 
-                id='categoriesList'
-                value={this.state.category}
-                onChange={this.handleCategoryChange}
-            >
-              <option value="">Select a Category</option>
-            </select>
-          </label>
-          <br/>
-          <input type='submit' value='Find Events'/>
-        </form>
-      </div>
+          </Col>
+        </Form.Group>
+
+        <Form.Group as={Row} controlId="formHorizontalPassword">
+          <Form.Label column sm={2}>
+            Password
+          </Form.Label>
+            <Col sm={10}>
+              <Form.Control 
+              as="select"
+              id='categoriesList'
+              value={this.state.category}
+              onChange={this.handleCategoryChange}
+              >
+                <option value="">Select a Category</option>
+              </Form.Control>
+            </Col>
+          
+        </Form.Group>
+
+        <Form.Group as={Row}>
+          <Col sm={{ span: 10, offset: 2 }}>
+            <Button type="submit">Find Events</Button>
+          </Col>
+        </Form.Group>
+      </Form>
     )
   }
 }
 
-export default Form;
+export default EventForm;

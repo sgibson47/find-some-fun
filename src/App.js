@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Form from './components/Form'
+import EventForm from './components/Form'
 import EventsList from './containers/EventsList'
 
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
   render() {
     return(
       <>
-        <Form searchEB={this.searchEB}/>
+        <EventForm searchEB={this.searchEB}/>
         <EventsList events={this.state.events} />
       </>
     );
