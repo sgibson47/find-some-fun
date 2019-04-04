@@ -23,3 +23,18 @@ Goal: a React App that let's users look up upcoming events in thier area by cate
 [X] parse multiple keywords
 
 ---
+What next? 
+[X] draft ReadMe so folks can use & improve upon Find Some Fun
+
+1) make it pretty with bootstrap
+[] add react-bootstrap to project
+[] include the latest bootstrap css from the CDN
+[] review available layouts & components -- make a plan!
+[] refactor <App /> to be made of Bootstrap components
+[] refactor <Form /> ...
+[] refactor <EventsList /> ...
+[] refactor <Event /> ... 
+
+--
+2) have app access user location and prioritize/order search results by proximity
+3) (only if 2 has happened) add map of results with flags at each venue location; pop ups on each flag moving list of events to that event's component
