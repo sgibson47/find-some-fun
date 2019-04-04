@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import EventForm from './components/Form'
-import EventsList from './containers/EventsList'
+import EventForm from './components/Form';
+import EventsList from './containers/EventsList';
+import Container from 'react-bootstrap/Container';
 
 class App extends Component {
   constructor(props){
@@ -19,13 +20,19 @@ class App extends Component {
       .then(response => response.json())
       .then(data => this.setState({events: data.events}))
   }
+
+  addAppContents(){
+    return(
+        <>
+          <EventForm searchEB={this.searchEB}/>
+          <EventsList events={this.state.events} />
+        </>
+    )
+  }
   
   render() {
     return(
-      <>
-        <EventForm searchEB={this.searchEB}/>
-        <EventsList events={this.state.events} />
-      </>
+      <Container>{this.addAppContents()}</Container>
     );
   }
 }
