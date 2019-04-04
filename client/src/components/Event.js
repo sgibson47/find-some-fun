@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 
 class Event extends Component {  
-
   render(){
     return(
-        <div></div>
+        <div className="Event">
+            <h2>{this.props.event.name.text}</h2>
+        </div>
     )
   }
 }
