@@ -19,3 +19,8 @@ Goal: a React App that let's users look up upcoming events in thier area by cate
 [] Print resutls
     add alert if no matching events
     print each returned event into an <Event /> inside <EventsList />
+
+--- 
+[] parse multiple keywords
+
+---
