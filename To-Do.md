@@ -20,6 +20,6 @@ Goal: a React App that let's users look up upcoming events in thier area by cate
     print each returned event into an <Event /> inside <EventsList />
 
 --- 
-[] parse multiple keywords
+[X] parse multiple keywords
 
 ---

@@ -14,7 +14,8 @@ class App extends Component {
 
   searchEB(eventKeyword, category){
     const auth_token = process.env.REACT_APP_EVENTBRITE_API_KEY;
-    fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${eventKeyword}&categories=${category}&token=${auth_token}`)
+    const keywordString = eventKeyword.split(" ").join('+')
+    fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${keywordString}&categories=${category}&token=${auth_token}`)
       .then(response => response.json())
       .then(data => this.setState({events: data.events}))
   }
