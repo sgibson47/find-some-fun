@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Event from '../components/Event'
+import Event from '../components/Event';
+import CardColumns from 'react-bootstrap/CardColumns';
 
 class EventsList extends Component {  
   createEvents = () => {
@@ -14,9 +15,9 @@ class EventsList extends Component {
   }
   render(){
     return(
-      <div className="EventsList">
+      <CardColumns className="EventsList">
         {this.createEvents()}
-      </div>
+      </CardColumns>
     )
   }
 }
