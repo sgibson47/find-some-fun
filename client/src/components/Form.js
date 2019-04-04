@@ -42,7 +42,7 @@ class Form extends Component {
   }
 
   componentDidMount(){
-    const auth_token = `HYZOE7FG2CUN6U3Y66B4`
+    const auth_token = ``
     fetch(`https://www.eventbriteapi.com/v3/categories/?token=${auth_token}`)
       .then(response => response.json())
       .then(data => this.addCategories(data))
