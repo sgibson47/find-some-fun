@@ -27,8 +27,8 @@ What next?
 [X] draft ReadMe so folks can use & improve upon Find Some Fun
 
 1) make it pretty with bootstrap
-[] add react-bootstrap to project
-[] include the latest bootstrap css from the CDN
+[X] add react-bootstrap to project
+[X] include the latest bootstrap css from the CDN
 [] review available layouts & components -- make a plan!
 [] refactor <App /> to be made of Bootstrap components
 [] refactor <Form /> ...
