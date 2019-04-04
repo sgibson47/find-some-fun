@@ -3,18 +3,16 @@ import Event from '../components/Event'
 
 class EventsList extends Component {  
   createEvents = () => {
-    return this.props.events.map(event =>
-          <Event 
-            // details about each event
-          />
+    return (
+      this.props.events.map(event =>
+          <div>{event.name.text}</div>
         )
-    }
+    )
+  }
   render(){
     return(
       <div className="EventsList">
-        <div className="Event">
           {this.createEvents()}
-        </div>
       </div>
     )
   }
