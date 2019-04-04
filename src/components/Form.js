@@ -42,7 +42,7 @@ class Form extends Component {
   }
 
   componentDidMount(){
-    const auth_token = ``
+    const auth_token = process.env.REACT_APP_EVENTBRITE_API_KEY;
     fetch(`https://www.eventbriteapi.com/v3/categories/?token=${auth_token}`)
       .then(response => response.json())
       .then(data => this.addCategories(data))
