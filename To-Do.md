@@ -15,7 +15,7 @@ Goal: a React App that let's users look up upcoming events in thier area by cate
 [X] Query Eventbrite API for matching events
 [X] Create component to display info for an event <Event />
     - with: image, name, description, link to register/get tickets, location?, date?
-[] Print resutls
+[X] Print resutls
     add alert if no matching events
     print each returned event into an <Event /> inside <EventsList />
 
