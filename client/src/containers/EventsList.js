@@ -8,12 +8,15 @@ class EventsList extends Component {
             // details about each event
           />
         )
+    }
   render(){
-    <div className="EventsList">
+    return(
+      <div className="EventsList">
         <div className="Event">
           {this.createEvents()}
         </div>
       </div>
+    )
   }
 }
 
