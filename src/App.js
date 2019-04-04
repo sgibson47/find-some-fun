@@ -3,6 +3,7 @@ import './App.css';
 import EventForm from './components/Form';
 import EventsList from './containers/EventsList';
 import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 
 class App extends Component {
   constructor(props){
@@ -32,7 +33,17 @@ class App extends Component {
   
   render() {
     return(
-      <Container>{this.addAppContents()}</Container>
+      <Container>
+        <Navbar bg="dark" variant="dark">
+          <Navbar.Brand>Find Some Fun</Navbar.Brand>
+        </Navbar>
+        <br/>
+        {this.addAppContents()}
+        <br/>
+        <Navbar bg="dark" variant="dark">
+          <Navbar.Brand>© Sam Gibson 2019</Navbar.Brand>
+        </Navbar>
+      </Container>
     );
   }
 }
