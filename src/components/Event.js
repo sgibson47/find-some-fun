@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Card from 'react-bootstrap/Card';
 
 class Event extends Component {  
     constructor(props){
@@ -10,38 +11,54 @@ class Event extends Component {
         if(!!event.logo && !!event.description.text){
             // if there is a logo & a description
             return(
-                <div className="Event">
-                    <h2>{event.name.text}</h2>
-                    <img src={event.logo.url} alt="Event Logo"/>
-                    <p>{event.description.text}</p>
-                    <a href={event.url}>Tickets & More Info</a>
-                </div>
+                <Card>
+                    <Card.Img variant="top" src={event.logo.url} />
+                    <Card.Body>
+                        <Card.Title>{event.name.text}</Card.Title>
+                        <Card.Text>{event.description.text}</Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                    <small className="text-muted"><a href={event.url}>Tickets & More Info</a></small>
+                    </Card.Footer>
+                </Card>
             )
         }else if(!event.logo && !!event.description.text){
             //if there's a description, but no logo
             return(
-                <div className="Event">
-                    <h2>{event.name.text}</h2>
-                    <p>{event.description.text}</p>
-                    <a href={event.url}>Tickets & More Info</a>
-                </div>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>{event.name.text}</Card.Title>
+                        <Card.Text>{event.description.text}</Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                    <small className="text-muted"><a href={event.url}>Tickets & More Info</a></small>
+                    </Card.Footer>
+                </Card>
             ) 
         }else if(!!event.logo && !event.description.text){
             // if there's a logo, but no description
             return(
-                <div className="Event">
-                    <h2>{event.name.text}</h2>
-                    <img src={event.logo.url} alt="Event Logo"/>
-                    <a href={event.url}>Tickets & More Info</a>
-                </div>
+                <Card>
+                    <Card.Img variant="top" src={event.logo.url} />
+                    <Card.Body>
+                        <Card.Title>{event.name.text}</Card.Title>
+                    </Card.Body>
+                    <Card.Footer>
+                    <small className="text-muted"><a href={event.url}>Tickets & More Info</a></small>
+                    </Card.Footer>
+                </Card>
             )
         }else{
             //there's no logo & no description
             return(
-                <div className="Event">
-                    <h2>{event.name.text}</h2>
-                    <a href={event.url}>Tickets & More Info</a>
-                </div>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>{event.name.text}</Card.Title>
+                    </Card.Body>
+                    <Card.Footer>
+                    <small className="text-muted"><a href={event.url}>Tickets & More Info</a></small>
+                    </Card.Footer>
+                </Card>
             )
         }
         
