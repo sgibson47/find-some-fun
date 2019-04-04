@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col'
+import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
 
 
 class EventForm extends Component {
@@ -10,7 +11,8 @@ class EventForm extends Component {
     super(props);
     this.state={
       eventKeyword: '',
-      category: ''
+      category: '',
+      alert: null
     };
 
     this.handleKeywordChange = this.handleKeywordChange.bind(this);
@@ -65,28 +67,15 @@ class EventForm extends Component {
   }
 
   addWarning(message) {
-    // create a div
-    const div = document.createElement('div');
-    div.setAttribute("id", "warning")
-
-    // add the text
-    div.appendChild(document.createTextNode(message));
-
-    // Insert into the HTML
-    const form = document.querySelector('#eventForm')
-    form.appendChild(div);
-
-    // Remove the alert after 5 seconds
-    setTimeout(() => {
-        this.removeWarning();
-    }, 5000);
+    this.setState({
+      alert: (<Alert dismissible variant="warning" onClose={() => this.removeWarning()}>
+        <Alert.Heading>{message}</Alert.Heading>
+      </Alert>)
+    })
   }
 
   removeWarning(){
-    const warning = document.querySelector('#warning');
-    if(warning) {
-      warning.remove();
-    }
+    this.setState({alert: null})
   }
 
   render(){
@@ -107,9 +96,9 @@ class EventForm extends Component {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} controlId="formHorizontalPassword">
+        <Form.Group as={Row} controlId="formHorizontalCategory">
           <Form.Label column sm={2}>
-            Password
+            Category
           </Form.Label>
             <Col sm={10}>
               <Form.Control 
@@ -129,6 +118,7 @@ class EventForm extends Component {
             <Button type="submit">Find Events</Button>
           </Col>
         </Form.Group>
+        {this.state.alert}
       </Form>
     )
   }
