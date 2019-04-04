@@ -28,7 +28,7 @@ class Form extends Component {
 
     if(eventKeyword !== '' && category !== ''){
       //Find matching events from API
-      this.searchEB(eventKeyword, category);
+      this.props.searchEB(eventKeyword, category);
     }else if(eventKeyword === '' && category !== ''){
       // Display a message that you must provide a keyword
       this.addWarning('You must provide a keyword to search')
@@ -82,13 +82,6 @@ class Form extends Component {
     if(warning) {
       warning.remove();
     }
-  }
-
-  searchEB(eventKeyword, category){
-    const auth_token = `HYZOE7FG2CUN6U3Y66B4`
-    fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${eventKeyword}&categories=${category}&token=${auth_token}`)
-      .then(response => response.json())
-      .then(data => console.log(data))
   }
 
   render(){
