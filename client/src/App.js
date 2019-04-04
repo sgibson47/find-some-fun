@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Form from './components/Form'
+import EventsList from './containers/EventsList'
 
 class App extends Component {
   constructor(props){
@@ -14,6 +15,7 @@ class App extends Component {
     return(
       <>
         <Form />
+        <EventsList events={this.state.events} />
       </>
     );
   }
