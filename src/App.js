@@ -26,6 +26,12 @@ class App extends Component {
           long: position.coords.longitude
         }
       })
+    }, () =>{
+      fetch('https://ipapi.co/json')
+        .then(response => response.json())
+        .then((location)=>{
+          console.log(location)
+        })
     })
   }
 
