@@ -9,7 +9,11 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      events: []
+      events: [],
+      location: {
+        lat: 51.505,
+        long: -0.09
+      }
     };
     this.searchEB = this.searchEB.bind(this);
   }
