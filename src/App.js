@@ -18,6 +18,12 @@ class App extends Component {
     this.searchEB = this.searchEB.bind(this);
   }
 
+  componentDidMount(){
+    navigator.geolocation.getCurrentPosition((position) =>{
+      console.log(position)
+    })
+  }
+
   searchEB(eventKeyword, category){
     const auth_token = process.env.REACT_APP_EVENTBRITE_API_KEY;
     const keywordString = eventKeyword.split(" ").join('+')
