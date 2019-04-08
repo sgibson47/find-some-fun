@@ -43,3 +43,17 @@ What next?
 [X] use location in search
 
 3) (only if 2 has happened) add map of results with flags at each venue location; pop ups on each flag moving list of events to that event's component
+[] install leaflet
+[] import css from nodemodule to index.js
+[] install react-leaflet
+[] create <Map /> component & put a map in it
+    [] - should center over user's location
+    [] - start zoomed way out before we have user's location
+    [] - zoom in once we have user's location
+[] reorganize page 
+    [] - ¿ map visible before search submitted?
+    [] - map to the right of Events List 
+    [] - able to scroll through events list w/o moving map
+[] get venue locations
+[] add a marker for each venue
+[] add a pop up at each marker describing || linking to event  
