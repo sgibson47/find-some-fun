@@ -40,6 +40,6 @@ What next?
 [X] Get user's location
     [X] with browser
     [X] with IP address
-[] order search results by location
+[X] use location in search
 
 3) (only if 2 has happened) add map of results with flags at each venue location; pop ups on each flag moving list of events to that event's component

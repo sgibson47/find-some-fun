@@ -43,7 +43,7 @@ class App extends Component {
   searchEB(eventKeyword, category){
     const auth_token = process.env.REACT_APP_EVENTBRITE_API_KEY;
     const keywordString = eventKeyword.split(" ").join('+')
-    fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${keywordString}&categories=${category}&token=${auth_token}`)
+    fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${keywordString}&location.latitude=${this.state.location.lat}&location.longitude=${this.state.location.long}&categories=${category}&token=${auth_token}`)
       .then(response => response.json())
       .then(data => this.setState({events: data.events}))
   }
