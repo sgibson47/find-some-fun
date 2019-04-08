@@ -81,7 +81,7 @@ class EventForm extends Component {
   render(){
     return(
       <Form onSubmit={this.handleSubmit} id='eventForm'>
-        <Form.Group as={Row} controlId="formHorizontalKeyword">
+        <Form.Group as={Row}>
           <Form.Label column sm={2}>
             Keyword
           </Form.Label>
@@ -96,7 +96,7 @@ class EventForm extends Component {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} controlId="formHorizontalCategory">
+        <Form.Group as={Row}>
           <Form.Label column sm={2}>
             Category
           </Form.Label>
