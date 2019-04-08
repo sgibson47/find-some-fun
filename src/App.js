@@ -30,7 +30,12 @@ class App extends Component {
       fetch('https://ipapi.co/json')
         .then(response => response.json())
         .then((location)=>{
-          console.log(location)
+          this.setState({
+            location:{
+              lat: location.latitude,
+              long: location.longitude
+            }
+          })
         })
     })
   }
