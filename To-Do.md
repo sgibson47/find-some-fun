@@ -37,9 +37,9 @@ What next?
 
 --
 2) have app access user location and prioritize/order search results by proximity
-[] Get user's location
-    [] with browser
-    [] with IP address
+[X] Get user's location
+    [X] with browser
+    [X] with IP address
 [] order search results by location
 
 3) (only if 2 has happened) add map of results with flags at each venue location; pop ups on each flag moving list of events to that event's component
