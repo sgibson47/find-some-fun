@@ -43,13 +43,13 @@ What next?
 [X] use location in search
 
 -- 
-[] add alert when search returns 0 results -- right now it looks like nothing happens
+[X] add alert when search returns 0 results -- right now it looks like nothing happens
 
 
 3) (only if 2 has happened) add map of results with flags at each venue location; pop ups on each flag moving list of events to that event's component
-[] install leaflet
-[] import css from nodemodule to index.js
-[] install react-leaflet
+[X] install leaflet
+[X] import css from nodemodule to index.js
+[X] install react-leaflet
 [] create <Map /> component & put a map in it
     [] - should center over user's location
     [] - start zoomed way out before we have user's location
