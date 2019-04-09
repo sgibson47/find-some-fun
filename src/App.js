@@ -63,7 +63,7 @@ class App extends Component {
       .then(data => {
         console.log(data);
         if(data.events.length === 0){
-          this.setState({events: [0]})
+          this.addWarning(`Eventbrite doesn't have any events that match your search.`)
         }else{
           this.setState({events: data.events})
         }
