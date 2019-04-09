@@ -16,7 +16,8 @@ class App extends Component {
         lat: 51.505,
         long: -0.09
       },
-      alert: null
+      alert: null,
+      hasUserLocation: false
     };
     this.searchEB = this.searchEB.bind(this);
     this.addWarning = this.addWarning.bind(this)
@@ -28,7 +29,8 @@ class App extends Component {
         location:{
           lat: position.coords.latitude,
           long: position.coords.longitude
-        }
+        },
+        hasUserLocation: true
       })
     }, () =>{
       fetch('https://ipapi.co/json')
@@ -38,7 +40,8 @@ class App extends Component {
             location:{
               lat: location.latitude,
               long: location.longitude
-            }
+            },
+            hasUserLocation: true
           })
         })
     })
@@ -75,7 +78,11 @@ class App extends Component {
     return(
         <>
           <EventForm searchEB={this.searchEB} addWarning={this.addWarning}/>
-          <MyMap />
+          <MyMap 
+            lat={this.state.location.lat} 
+            long={this.state.location.long} 
+            hasUserLocation={this.state.hasUserLocation}
+          />
           <EventsList events={this.state.events} addWarning={this.addWarning}/>
         </>
     )

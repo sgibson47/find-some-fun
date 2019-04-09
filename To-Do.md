@@ -50,7 +50,7 @@ What next?
 [X] install leaflet
 [X] import css from nodemodule to index.js
 [X] install react-leaflet
-[] create <Map /> component & put a map in it
+[X] create <Map /> component & put a map in it
 [] make map way zoomed out before we have a user's location
 [] zoom in once we have user's location
 [] get venue locations
