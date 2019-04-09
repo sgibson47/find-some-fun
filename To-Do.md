@@ -51,13 +51,15 @@ What next?
 [X] import css from nodemodule to index.js
 [X] install react-leaflet
 [] create <Map /> component & put a map in it
-    [] - should center over user's location
-    [] - start zoomed way out before we have user's location
-    [] - zoom in once we have user's location
-[] reorganize page 
-    [] - ¿ map visible before search submitted?
-    [] - map to the right of Events List 
-    [] - able to scroll through events list w/o moving map
+[] make map way zoomed out before we have a user's location
+[] zoom in once we have user's location
 [] get venue locations
 [] add a marker for each venue
 [] add a pop up at each marker describing || linking to event  
+
+
+Put events in a scrollable list next to map
+[] map to the right of Events List 
+[] able to scroll through events list w/o moving map
+[] clicking on an event pin should move list to selected event
+[] hovering over/clicking on an event in the list should open a pop up over pin associated with that event
