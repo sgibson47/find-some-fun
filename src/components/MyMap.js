@@ -8,7 +8,7 @@ class MyMap extends Component{
         this.state = {
             lat: this.props.lat,
             lng: this.props.long,
-            zoom: 13,
+            zoom: 2,
             hasUserLocation: this.props.hasUserLocation
         }
     }
@@ -18,7 +18,8 @@ class MyMap extends Component{
             this.setState({
                 lat: nextProps.lat,
                 lng: nextProps.long,
-                hasUserLocation: nextProps.hasUserLocation
+                hasUserLocation: nextProps.hasUserLocation,
+                zoom: 15
             });
         }
     }

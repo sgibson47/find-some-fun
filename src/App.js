@@ -78,11 +78,13 @@ class App extends Component {
     return(
         <>
           <EventForm searchEB={this.searchEB} addWarning={this.addWarning}/>
+          {this.state.alert}
           <MyMap 
             lat={this.state.location.lat} 
             long={this.state.location.long} 
             hasUserLocation={this.state.hasUserLocation}
           />
+          <br />
           <EventsList events={this.state.events} addWarning={this.addWarning}/>
         </>
     )
@@ -96,7 +98,6 @@ class App extends Component {
         </Navbar>
         <br/>
         {this.addAppContents()}
-        {this.state.alert}
         <br/>
         <Navbar bg="dark" variant="dark">
           <Navbar.Brand>© Sam Gibson 2019</Navbar.Brand>

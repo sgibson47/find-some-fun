@@ -51,8 +51,10 @@ What next?
 [X] import css from nodemodule to index.js
 [X] install react-leaflet
 [X] create <Map /> component & put a map in it
-[] make map way zoomed out before we have a user's location
-[] zoom in once we have user's location
+[X] make map way zoomed out before we have a user's location
+[X] zoom in once we have user's location
+[] add a marker at User's location
+
 [] get venue locations
 [] add a marker for each venue
 [] add a pop up at each marker describing || linking to event  
