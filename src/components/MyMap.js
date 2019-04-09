@@ -13,6 +13,16 @@ class MyMap extends Component{
         }
     }
 
+    componentWillReceiveProps(nextProps){
+        if(nextProps.hasUserLocation !== this.props.hasUserLocation){
+            this.setState({
+                lat: nextProps.lat,
+                lng: nextProps.long,
+                hasUserLocation: nextProps.hasUserLocation
+            });
+        }
+    }
+
     render() {
         const position = [this.state.lat, this.state.lng]
         return (
