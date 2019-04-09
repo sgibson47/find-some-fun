@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Alert from 'react-bootstrap/Alert';
+
 
 
 class EventForm extends Component {
@@ -12,7 +12,6 @@ class EventForm extends Component {
     this.state={
       eventKeyword: '',
       category: '',
-      alert: null
     };
 
     this.handleKeywordChange = this.handleKeywordChange.bind(this);
@@ -38,13 +37,13 @@ class EventForm extends Component {
       this.props.searchEB(eventKeyword, category);
     }else if(eventKeyword === '' && category !== ''){
       // Display a message that you must provide a keyword
-      this.addWarning('You must provide a keyword to search')
+      this.props.addWarning('You must provide a keyword to search')
     }else if(eventKeyword !== '' && category === ''){
       // Display a message that you must select a category
-      this.addWarning('You must select a category to search')
+      this.props.addWarning('You must select a category to search')
     }else{
       // Display a message that you must provide a keyword & select a keyword
-      this.addWarning('You must provide a keyword and select a category to search')
+      this.props.addWarning('You must provide a keyword and select a category to search')
     }
   }
 
@@ -66,17 +65,7 @@ class EventForm extends Component {
     })
   }
 
-  addWarning(message) {
-    this.setState({
-      alert: (<Alert dismissible variant="warning" onClose={() => this.removeWarning()}>
-        <Alert.Heading>{message}</Alert.Heading>
-      </Alert>)
-    })
-  }
-
-  removeWarning(){
-    this.setState({alert: null})
-  }
+  
 
   render(){
     return(
@@ -118,7 +107,6 @@ class EventForm extends Component {
             <Button type="submit">Find Events</Button>
           </Col>
         </Form.Group>
-        {this.state.alert}
       </Form>
     )
   }
