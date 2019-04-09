@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Map, TileLayer, Marker, Popup} from 'react-leaflet';
 
-class Map extends Component{
+class MyMap extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -12,7 +12,7 @@ class Map extends Component{
     }
 
     render() {
-        const position = [this.state.lat, this.state.lng]
+        const position = [this.state.lat, this.state.long]
         return (
             <Map center={position} zoom={this.state.zoom}>
             <TileLayer
@@ -30,4 +30,4 @@ class Map extends Component{
 
 }
 
-export default Map; 
+export default MyMap; 

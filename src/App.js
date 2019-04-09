@@ -5,6 +5,7 @@ import EventsList from './containers/EventsList';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Alert from 'react-bootstrap/Alert';
+import MyMap from './components/MyMap';
 
 class App extends Component {
   constructor(props){
@@ -74,6 +75,7 @@ class App extends Component {
     return(
         <>
           <EventForm searchEB={this.searchEB} addWarning={this.addWarning}/>
+          <MyMap />
           <EventsList events={this.state.events} addWarning={this.addWarning}/>
         </>
     )
