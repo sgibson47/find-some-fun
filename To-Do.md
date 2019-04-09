@@ -42,6 +42,10 @@ What next?
     [X] with IP address
 [X] use location in search
 
+-- 
+[] add alert when search returns 0 results -- right now it looks like nothing happens
+
+
 3) (only if 2 has happened) add map of results with flags at each venue location; pop ups on each flag moving list of events to that event's component
 [] install leaflet
 [] import css from nodemodule to index.js

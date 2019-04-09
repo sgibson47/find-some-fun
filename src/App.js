@@ -45,7 +45,14 @@ class App extends Component {
     const keywordString = eventKeyword.split(" ").join('+')
     fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${keywordString}&location.latitude=${this.state.location.lat}&location.longitude=${this.state.location.long}&categories=${category}&token=${auth_token}`)
       .then(response => response.json())
-      .then(data => this.setState({events: data.events}))
+      .then(data => {
+        console.log(data);
+        if(data.events.length === 0){
+          this.setState({events: [0]})
+        }else{
+          this.setState({events: data.events})
+        }
+      })
   }
 
   addAppContents(){
