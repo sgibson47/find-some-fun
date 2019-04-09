@@ -53,7 +53,7 @@ What next?
 [X] create <Map /> component & put a map in it
 [X] make map way zoomed out before we have a user's location
 [X] zoom in once we have user's location
-[] add a marker at User's location
+[X] add a marker at User's location
 
 [] get venue locations
 [] add a marker for each venue
