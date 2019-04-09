@@ -4,14 +4,19 @@ import CardColumns from 'react-bootstrap/CardColumns';
 
 class EventsList extends Component {  
   createEvents = () => {
-    return (
-      this.props.events.map(event =>
-          <Event 
-            key={event.id}
-            event={event}
-          />
-        )
-    )
+    if(this.props.events[0] === 0){
+      console.log('No matching events! make me an alert')
+    }else{
+      return (
+        this.props.events.map(event =>
+            <Event 
+              key={event.id}
+              event={event}
+            />
+          )
+      )
+    }
+    
   }
   render(){
     return(
