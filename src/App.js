@@ -74,7 +74,7 @@ class App extends Component {
     return(
         <>
           <EventForm searchEB={this.searchEB} addWarning={this.addWarning}/>
-          <EventsList events={this.state.events} />
+          <EventsList events={this.state.events} addWarning={this.addWarning}/>
         </>
     )
   }
