@@ -9,8 +9,13 @@ class MyMap extends Component{
         this.state = {
             lat: this.props.lat,
             lng: this.props.long,
-            zoom: 2
+            zoom: 2,
+            venues: []
         }
+    }
+
+    componentDidMount(){
+        this.findVenueLocations();
     }
 
     componentWillReceiveProps(nextProps){
@@ -43,6 +48,20 @@ class MyMap extends Component{
                     </Popup>
                 </Marker>
             )
+        }
+    }
+
+    findVenueLocations(){
+        const auth_token = process.env.REACT_APP_EVENTBRITE_API_KEY;
+        const venue_id = 31062470
+        if(this.props.events.length >= 0){
+        //     events.forEach((event)=>{
+                fetch(`https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                })
+        //     })
         }
     }
 

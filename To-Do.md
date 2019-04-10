@@ -64,6 +64,7 @@ What next?
     [X] send the events (or just id, name, and venue_id?) to MyMap
     then, if MyMap.props.events isn't empty, 
     [] for each event, query EB for venue location &
+        https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}
     [] create a Marker & Pop up for the event/venue combo
 [] add a marker for each venue
 [] add a pop up at each marker describing || linking to event  
