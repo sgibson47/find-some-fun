@@ -57,6 +57,14 @@ What next?
 
 [X] no marker until we have user's location
 [] get venue locations
+    searching EB for events returns objects representing events with a 'venue_id' 
+    we have to query EB's venues for location info on each venue
+    so . . .  
+    when we get the events, we want to 
+    [X] send the events (or just id, name, and venue_id?) to MyMap
+    then, if MyMap.props.events isn't empty, 
+    [] for each event, query EB for venue location &
+    [] create a Marker & Pop up for the event/venue combo
 [] add a marker for each venue
 [] add a pop up at each marker describing || linking to event  
 

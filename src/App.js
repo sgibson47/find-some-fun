@@ -83,6 +83,7 @@ class App extends Component {
             lat={this.state.location.lat} 
             long={this.state.location.long} 
             hasUserLocation={this.state.hasUserLocation}
+            events={this.state.events}
           />
           <br />
           <EventsList events={this.state.events} addWarning={this.addWarning}/>
