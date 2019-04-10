@@ -55,7 +55,7 @@ What next?
 [X] zoom in once we have user's location
 [X] add a marker at User's location
 
-[] no marker until we have user's location
+[X] no marker until we have user's location
 [] get venue locations
 [] add a marker for each venue
 [] add a pop up at each marker describing || linking to event  
