@@ -18,15 +18,27 @@ class MyMap extends Component{
         this.findVenueLocations();
     }
 
-    componentWillReceiveProps(nextProps){
-        if(nextProps.hasUserLocation !== this.props.hasUserLocation){
+    // componentWillReceiveProps(nextProps){
+    //     if(nextProps.hasUserLocation !== this.props.hasUserLocation){
+    //         this.setState({
+    //             lat: nextProps.lat,
+    //             lng: nextProps.long,
+    //             zoom: 15
+    //         });
+    //     }
+    // }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.hasUserLocation !== prevProps.hasUserLocation) {
             this.setState({
-                lat: nextProps.lat,
-                lng: nextProps.long,
+                lat: this.props.lat,
+                lng: this.props.long,
                 zoom: 15
             });
         }
     }
+
+
 
     addUserMarker(){
         const position = [this.state.lat, this.state.lng]
