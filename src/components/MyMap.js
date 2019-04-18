@@ -14,20 +14,6 @@ class MyMap extends Component{
         }
     }
 
-    // componentDidMount(){
-    //     this.findVenueLocations();
-    // }
-
-    // componentWillReceiveProps(nextProps){
-    //     if(nextProps.hasUserLocation !== this.props.hasUserLocation){
-    //         this.setState({
-    //             lat: nextProps.lat,
-    //             lng: nextProps.long,
-    //             zoom: 15
-    //         });
-    //     }
-    // }
-
     componentDidUpdate(prevProps) {
         if (this.props.hasUserLocation !== prevProps.hasUserLocation) {
             this.setState({
@@ -68,11 +54,7 @@ class MyMap extends Component{
 
     findVenueLocations(){
         const auth_token = process.env.REACT_APP_EVENTBRITE_API_KEY;
-        
         if(this.props.events.length > 0){
-            // const event = this.props.events[0]
-            // const venue_id = event.venue_id
-
             this.props.events.forEach((event)=>{
               const venue_id = event.venue_id  
                 fetch(`https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}`)
