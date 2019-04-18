@@ -22,8 +22,10 @@ class MyMap extends Component{
                 zoom: 15
             });
         }
-        if(this.props.events.length !== prevProps.events.length){
-            this.findVenueLocations();
+        if(this.props.venues.length !== prevProps.venues.length){
+            this.setState({
+                venues: this.props.venues
+            });
         }
     }
 
@@ -50,29 +52,6 @@ class MyMap extends Component{
                 </Marker>
             )
         }
-    }
-
-    findVenueLocations(){
-        const auth_token = process.env.REACT_APP_EVENTBRITE_API_KEY;
-        if(this.props.events.length > 0){
-            this.props.events.forEach((event)=>{
-              const venue_id = event.venue_id  
-                fetch(`https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        data["event_id"] = event.id;
-                        data["event_name"] = event.name.text
-                        this.addVenueToState(data)
-                    })
-            })
-        }
-    }
-    
-    addVenueToState(venue){
-        this.setState(prevState =>{
-            const newVenues = prevState.venues.concat([venue])
-            return {venues: newVenues}
-        })
     }
 
     addVenueMarkers(){

@@ -66,7 +66,7 @@ What next?
     [X] for each event, query EB for venue location &
         https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}
     [X] create a Marker & Pop up for the event/venue combo
-[] clear venues when new search is made  
+[X] clear venues when new search is made  
 
 
 Put events in a scrollable list next to map
