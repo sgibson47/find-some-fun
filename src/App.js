@@ -17,7 +17,8 @@ class App extends Component {
         long: -0.09
       },
       alert: null,
-      hasUserLocation: false
+      hasUserLocation: false,
+      venues: []
     };
     this.searchEB = this.searchEB.bind(this);
     this.addWarning = this.addWarning.bind(this)
@@ -62,6 +63,7 @@ class App extends Component {
   searchEB(eventKeyword, category){
     const auth_token = process.env.REACT_APP_EVENTBRITE_API_KEY;
     const keywordString = eventKeyword.split(" ").join('+')
+    this.clearVenues();
     fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${keywordString}&location.latitude=${this.state.location.lat}&location.longitude=${this.state.location.long}&categories=${category}&token=${auth_token}`)
       .then(response => response.json())
       .then(data => {
@@ -69,9 +71,37 @@ class App extends Component {
         if(data.events.length === 0){
           this.addWarning(`Eventbrite doesn't have any events that match your search.`)
         }else{
-          this.setState({events: data.events})
+          this.setState({events: data.events});
+          this.findVenueLocations();
         }
       })
+  }
+
+  findVenueLocations(){
+    const auth_token = process.env.REACT_APP_EVENTBRITE_API_KEY;
+    if(this.state.events.length > 0){
+        this.state.events.forEach((event)=>{
+          const venue_id = event.venue_id  
+            fetch(`https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}`)
+                .then(response => response.json())
+                .then(data => {
+                    data["event_id"] = event.id;
+                    data["event_name"] = event.name.text
+                    this.addVenueToState(data)
+                })
+        })
+    }
+  }
+
+  addVenueToState(venue){
+    this.setState(prevState =>{
+        const newVenues = prevState.venues.concat([venue])
+        return {venues: newVenues}
+    })
+  }
+
+  clearVenues(){
+    this.setState({venues: []})
   }
 
   addAppContents(){

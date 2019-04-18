@@ -56,7 +56,7 @@ What next?
 [X] add a marker at User's location
 
 [X] no marker until we have user's location
-[] get venue locations
+[X] get venue locations
     searching EB for events returns objects representing events with a 'venue_id' 
     we have to query EB's venues for location info on each venue
     so . . .  
@@ -65,9 +65,8 @@ What next?
     then, if MyMap.props.events isn't empty, 
     [X] for each event, query EB for venue location &
         https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}
-    [] create a Marker & Pop up for the event/venue combo
-[] add a marker for each venue
-[] add a pop up at each marker describing || linking to event  
+    [X] create a Marker & Pop up for the event/venue combo
+[] clear venues when new search is made  
 
 
 Put events in a scrollable list next to map
