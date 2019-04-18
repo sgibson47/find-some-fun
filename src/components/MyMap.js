@@ -61,6 +61,7 @@ class MyMap extends Component{
                     .then(response => response.json())
                     .then(data => {
                         data["event_id"] = event.id;
+                        data["event_name"] = event.name.text
                         this.addVenueToState(data)
                     })
             })
@@ -90,7 +91,7 @@ class MyMap extends Component{
                         icon={myIcon}
                     >
                         <Popup>
-                        {venue.name}
+                        {`${venue.event_name} at ${venue.name}`}
                         </Popup>
                     </Marker>
                 )
