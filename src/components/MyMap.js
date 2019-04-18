@@ -89,6 +89,9 @@ class MyMap extends Component{
                         position={[venue.latitude, venue.longitude]}
                         icon={myIcon}
                     >
+                        <Popup>
+                        {venue.name}
+                        </Popup>
                     </Marker>
                 )
             })
