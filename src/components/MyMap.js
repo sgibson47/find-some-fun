@@ -74,13 +74,14 @@ class MyMap extends Component{
             const venue_id = event.venue_id
 
         //     events.forEach((event)=>{
-                // fetch(`https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}`)
-                // .then(response => response.json())
-                // .then(data => {
-                    // console.log(data);
-                // })
+            //   const venue_id = event.venue_id  
+            fetch(`https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}`)
+                .then(response => response.json())
+                .then(data => {
+                    data["event_id"] = event.id
+                    console.log(data);
+                })
         //     })
-            console.log(venue_id)
         }
     }
 
