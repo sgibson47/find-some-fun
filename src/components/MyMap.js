@@ -14,9 +14,9 @@ class MyMap extends Component{
         }
     }
 
-    componentDidMount(){
-        this.findVenueLocations();
-    }
+    // componentDidMount(){
+    //     this.findVenueLocations();
+    // }
 
     // componentWillReceiveProps(nextProps){
     //     if(nextProps.hasUserLocation !== this.props.hasUserLocation){
@@ -35,6 +35,9 @@ class MyMap extends Component{
                 lng: this.props.long,
                 zoom: 15
             });
+        }
+        if(this.props.events.length !== prevProps.events.length){
+            this.findVenueLocations();
         }
     }
 
@@ -65,15 +68,19 @@ class MyMap extends Component{
 
     findVenueLocations(){
         const auth_token = process.env.REACT_APP_EVENTBRITE_API_KEY;
-        const venue_id = 31062470
-        if(this.props.events.length >= 0){
+        
+        if(this.props.events.length > 0){
+            const event = this.props.events[0]
+            const venue_id = event.venue_id
+
         //     events.forEach((event)=>{
-                fetch(`https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}`)
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                })
+                // fetch(`https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}`)
+                // .then(response => response.json())
+                // .then(data => {
+                    // console.log(data);
+                // })
         //     })
+            console.log(venue_id)
         }
     }
 
