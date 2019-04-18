@@ -70,19 +70,20 @@ class MyMap extends Component{
         const auth_token = process.env.REACT_APP_EVENTBRITE_API_KEY;
         
         if(this.props.events.length > 0){
-            const event = this.props.events[0]
-            const venue_id = event.venue_id
+            // const event = this.props.events[0]
+            // const venue_id = event.venue_id
 
-        //     events.forEach((event)=>{
-            //   const venue_id = event.venue_id  
-            fetch(`https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}`)
-                .then(response => response.json())
-                .then(data => {
-                    data["event_id"] = event.id
-                    console.log(data);
-                })
-        //     })
+            this.props.events.forEach((event)=>{
+              const venue_id = event.venue_id  
+                fetch(`https://www.eventbriteapi.com/v3/venues/${venue_id}/?token=${auth_token}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        data["event_id"] = event.id
+                        this.state.venues.push(data)
+                    })
+            })
         }
+        console.log(this.state.venues);
     }
 
     
