@@ -95,8 +95,12 @@ class App extends Component {
 
   addVenueToState(venue){
     this.setState(prevState =>{
-        const newVenues = [...prevState.venues, venue]
-        return {venues: newVenues}
+      // with spread  
+      // const newVenues = [...prevState.venues, venue]
+      // const newVenues = [venue, ...prevState.venues]
+      // with .concat()
+      const newVenues = prevState.venues.concat([venue])
+      return {venues: newVenues}
     })
   }
 
